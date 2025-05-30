@@ -43,7 +43,7 @@ public class Order implements Priceable {
     }
 
 
-    // calculates the total cost of the entire order by summing the prices of all items within its lists.
+    // method calculates the total cost of the entire order by summing the prices of all items within its lists.
     @Override
     public double getPrice() {
 //        total price for the order
@@ -58,5 +58,39 @@ public class Order implements Priceable {
             totalPrice += chips.getPrice();
         }
         return totalPrice;
+
+    }
+    //checks for sandwiches in order
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("--- Your Order Details ---\n");
+        if (!sandwiches.isEmpty()) {
+            sb.append("Sandwiches:\n");
+            //loops through sandwiches in the sandwich list
+            for (int i = 0; i < sandwiches.size(); i++) {
+                sb.append("Sandwich ").append(i + 1).append(":\n");
+                sb.append(sandwiches.get(i).toString());
+            }
+        }
+        // checks for drinks
+        if (!drinks.isEmpty()) {
+            sb.append("Drinks:\n");
+            for (Drink drink : drinks) {
+                sb.append("- ").append(drink.toString()).append("\n");
+                // appends a bullet point then drink details
+            }
+        }
+        // checks if there are chips
+        if (!chips.isEmpty()) {
+            sb.append("Chips:\n");
+            for (Chips chip : chips) { // Loop adjusted for Chips class
+                sb.append("- ").append(chip.toString()).append("\n");
+            }
+        }
+        //allows formatting w precision like showing 2 decimal places (%.2f)
+        sb.append(String.format("\nTotal Order Price: $%.2f\n", getPrice()));
+        return sb.toString();
+        //converts SB to final string and returns it
     }
 }

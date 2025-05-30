@@ -68,7 +68,7 @@ public class Sandwich implements Priceable{
         }
         return price;
     }
-
+// this method overrides a method from a superclass (like Object's toString()).
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -77,6 +77,7 @@ public class Sandwich implements Priceable{
         if (toasted) {
             sb.append("   Toasted: Yes\n");
         }
+        //check if any meat on sandwich
         if (!meats.isEmpty()) {
             sb.append("   Meats: ");
             for (int i = 0; i < meats.size(); i++) {
@@ -84,17 +85,24 @@ public class Sandwich implements Priceable{
                 if (meats.get(i).isExtra) {
                     sb.append(" (Extra)");
                 }
+                // Add a comma and space if it's not the last meat in the list, for better readability.
                 if (i < meats.size() - 1) {
                     sb.append(", ");
                 }
             }
             sb.append("\n");
         }
+        // Check if there are any cheeses on the sandwich.
+
         if (!cheese.isEmpty()) {
+            //label cheese
             sb.append("   Cheeses: ");
+            //loop through each cheese name
             for (int i = 0; i < cheese.size(); i++) {
                 sb.append(cheese.get(i).getName());
+                //check if cheese is an extra portion
                 if (cheese.get(i).isExtra) {
+                    //if extra append Extra
                     sb.append(" (Extra)");
                 }
                 if (i < cheese.size() - 1) {
@@ -103,13 +111,19 @@ public class Sandwich implements Priceable{
             }
             sb.append("\n");
         }
+        //check if any regular toppings
         if (!regularToppings.isEmpty()) {
+            // Use Java Streams to get the names of all sauces and join them with ", ".
             sb.append("   Other Toppings: ").append(String.join(", ", regularToppings.stream().map(Toppings::getName).collect(java.util.stream.Collectors.toList()))).append("\n");
         }
+        //check if any sauces
         if (!sauce.isEmpty()) {
+            // Use Java Streams to efficiently get the names of all regular toppings and join them with ", ".
+            // This is a more modern way to process collections.
             sb.append("   Sauces: ").append(String.join(", ", sauce.stream().map(Toppings::getName).collect(java.util.stream.Collectors.toList()))).append("\n");
         }
         sb.append(String.format("   Sandwich Price: $%.2f\n", getPrice()));
+        //getPrice method that calculates total cost of sandwich class
         return sb.toString();
     }
 }

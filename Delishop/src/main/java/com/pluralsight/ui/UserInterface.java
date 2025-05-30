@@ -100,18 +100,23 @@ public class UserInterface {
             }
         }
 //Adding sandwich size and breadtype to sandwich
+
         Sandwich sandwich = new Sandwich(size, breadType);
+        //loop to allow multiple meat toppings
+
         while (true) {
             System.out.print("Add Meat (steak, ham, salami, roast beef, chicken, bacon) or 'done': ");
             String meatChoice = scanner.nextLine();
             if (meatChoice.equals("done")) {
                 break;
             }
+            //validate of the meat choice is one of the allowing options
+
             if (meatChoice.equalsIgnoreCase("steak") || meatChoice.equalsIgnoreCase("ham") || meatChoice.equalsIgnoreCase("salami") ||
                     meatChoice.equalsIgnoreCase("roast beef") || meatChoice.equalsIgnoreCase("chicken") || meatChoice.equalsIgnoreCase("bacon")) {
                 System.out.print("Add extra " + meatChoice + "? (yes/no): ");
                 boolean extraMeat = scanner.nextLine().equalsIgnoreCase("yes");
-//                adding meat choice and if extra meet, added.
+                //updates meat choice and if extra meet, added.
                 sandwich.addMeat(meatChoice, extraMeat);
             } else {
                 System.out.println("Invalid meat choice. Please try again.");
@@ -132,12 +137,15 @@ public class UserInterface {
                 System.out.println("Invalid cheese choice. Please try again.");
             }
         }
+        // adding other regular toppings
         while (true) {
             System.out.print("Add Other Topping (lettuce, peppers, onions, tomatoes, jalapeños, cucumbers, pickles, guacamole, mushrooms) or 'done': ");
             String toppingChoice = scanner.nextLine();
             if (toppingChoice.equalsIgnoreCase("done")) {
                 break;
             }
+            //validate the topping choice
+
             if (toppingChoice.equalsIgnoreCase("lettuce") || toppingChoice.equalsIgnoreCase("peppers") || toppingChoice.equalsIgnoreCase("onions") ||
                     toppingChoice.equalsIgnoreCase("tomatoes") || toppingChoice.equalsIgnoreCase("jalapeños") || toppingChoice.equalsIgnoreCase("cucumbers") ||
                     toppingChoice.equalsIgnoreCase("pickles") || toppingChoice.equalsIgnoreCase("guacamole") || toppingChoice.equalsIgnoreCase("mushrooms")) {
@@ -147,9 +155,12 @@ public class UserInterface {
                 System.out.println("Invalid topping choice. Please try again.");
             }
         }
+
+        //adding sauces
         while (true) {
             System.out.print("Select Sauce (mayo, mustard, ketchup, ranch, thousand islands, vinaigrette, au jus sauce) or 'done': ");
             String sauceChoice = scanner.nextLine();
+            //validate sauce choice
             if (sauceChoice.equalsIgnoreCase("done")) {
                 break;
             }
@@ -163,14 +174,18 @@ public class UserInterface {
                 System.out.println("Invalid sauce choice. Please try again.");
             }
         }
-
+        //toasted option
         System.out.print("Would you like the sandwich toasted? (yes/no): ");
+        //read input and set the toasted status for sandwich
+
         boolean toastedChoice = scanner.nextLine().equalsIgnoreCase("yes");
         sandwich.setToasted(toastedChoice);
-
+        //finalizing sandwich addition
         currentOrder.addSandwich(sandwich);
         System.out.println("Sandwich added to order!");
     }
+
+    // adding drink to order
     private void addDrink() {
         System.out.println("\n--- Add Drink ---");
         String flavor;
@@ -194,7 +209,7 @@ public class UserInterface {
                 System.out.println("Invalid size. Please choose from Small, Medium, or Large.");
             }
         }
-// adding drink to order
+
         currentOrder.addDrink(new Drink(size, flavor));
         System.out.println("Drink added to order!");
     }

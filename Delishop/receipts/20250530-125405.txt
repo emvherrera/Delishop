@@ -1,0 +1,5 @@
+--- Your Order Details ---
+Drinks:
+- coke (small) - $2.00
+
+Total Order Price: $2.00
