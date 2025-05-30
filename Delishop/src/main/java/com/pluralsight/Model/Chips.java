@@ -1,4 +1,4 @@
-package Model;
+package com.pluralsight.Model;
 
 public class Chips implements Priceable{
 

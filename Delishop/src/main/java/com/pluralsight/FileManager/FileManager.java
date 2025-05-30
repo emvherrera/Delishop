@@ -1,5 +1,7 @@
-package FileManager;
-import Model.Order;
+package com.pluralsight.FileManager;
+
+
+import com.pluralsight.Model.Order;
 
 import java.io.File;
 import java.io.FileWriter;

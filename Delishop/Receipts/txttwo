@@ -1,0 +1,14 @@
+--- Your Order Details ---
+Sandwiches:
+Sandwich 1:
+   Size: 4
+   Bread: white
+   Toasted: Yes
+   Meats: steak
+   Other Toppings: lettuce
+   Sauces: mayo
+   Sandwich Price: $6.50
+Drinks:
+- coke (small) - $2.00
+
+Total Order Price: $8.50
