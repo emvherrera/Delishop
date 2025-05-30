@@ -1,5 +1,7 @@
 package com.pluralsight.Model;
 
+
+//concrete returns fixed price for 'included' chips
 public class Chips implements Priceable{
 
     private final String type;
@@ -15,8 +17,9 @@ public class Chips implements Priceable{
 
     @Override
 
+// returns fixed price for chips; only one price regardless of chip type
     public double getPrice() {
-//        Chips has a fixed price
+
         return 1.50;
     }
     @Override

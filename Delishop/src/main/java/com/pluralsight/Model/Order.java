@@ -3,6 +3,9 @@ package com.pluralsight.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+//concrete rep a complete customer order; 1 or more sandwiches, drinks, chips.
+//provides methods to add items to the order and display details
+
 public class Order implements Priceable {
     //    making Arrays for the order
     private final List<Sandwich> sandwiches;
@@ -39,6 +42,8 @@ public class Order implements Priceable {
         this.chips.add(chips);
     }
 
+
+    // calculates the total cost of the entire order by summing the prices of all items within its lists.
     @Override
     public double getPrice() {
 //        total price for the order

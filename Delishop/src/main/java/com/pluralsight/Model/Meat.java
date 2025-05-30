@@ -1,5 +1,6 @@
 package com.pluralsight.Model;
 
+//Concrete Represents premium meat toppings that can be added to a sandwich.
 public class Meat extends PremiumToppings {
 
     private final String sandwichSize;
@@ -11,6 +12,7 @@ public class Meat extends PremiumToppings {
         this.isExtra = isExtra;
     }
 
+    // calculates the cost based on the sandwich size (4", 8", 12") and whether the customer requested "extra meat".
     public double getPrice() {
         double price = 0.0;
         if (sandwichSize.equals("4")) {

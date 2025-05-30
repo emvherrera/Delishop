@@ -1,5 +1,8 @@
 package com.pluralsight.Model;
 
+//concrete stores size and flavor of drink
+//cost based on size
+
 public class Drink implements Priceable{
 
     private final String size; // "Small", "Medium", "Large"

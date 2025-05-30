@@ -1,5 +1,6 @@
 package com.pluralsight.Model;
 
+//concrete premium cheese toppings
 public class Cheese extends PremiumToppings {
     private final String sandwichSize;
     boolean isExtra;
@@ -9,6 +10,7 @@ public class Cheese extends PremiumToppings {
         this.sandwichSize = sandwichSize;
         this.isExtra = isExtra;
     }
+//calculates cost based on size and extra cheese
 
     public double getPrice() {
         double price = 0.0;
