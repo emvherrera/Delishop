@@ -1,7 +1,7 @@
 package com.pluralsight.Model;
 
 public abstract class Toppings implements Priceable {
-    private String name;
+    private final String name;
 
     public Toppings(String name) {
         this.name = name;

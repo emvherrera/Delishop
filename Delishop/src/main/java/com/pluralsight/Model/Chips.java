@@ -2,7 +2,7 @@ package com.pluralsight.Model;
 
 public class Chips implements Priceable{
 
-    private  String type;
+    private final String type;
 
     public Chips(String type) {
         this.type = type;

@@ -1,16 +1,15 @@
 package com.pluralsight.Model;
 
-public class Cheese extends PremiumToppings{
-    private String sandwichSize;
+public class Cheese extends PremiumToppings {
+    private final String sandwichSize;
     boolean isExtra;
 
     public Cheese(String name, String sandwichSize, boolean isExtra) {
-        super(name);
+        super(name); // Pass name to Toppings via PremiumToppings
         this.sandwichSize = sandwichSize;
         this.isExtra = isExtra;
     }
 
-    @Override
     public double getPrice() {
         double price = 0.0;
         if (sandwichSize.equals("4")) {
@@ -30,6 +29,7 @@ public class Cheese extends PremiumToppings{
                 price += 0.90;
             }
         }
+
         return price;
     }
 }

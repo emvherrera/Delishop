@@ -1,6 +1,6 @@
 package com.pluralsight.Model;
 
-public class PremiumToppings {
+public class PremiumToppings extends Toppings{
 
     public PremiumToppings(String name) {
         super(name);

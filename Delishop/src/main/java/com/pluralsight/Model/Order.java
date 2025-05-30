@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Order implements Priceable {
     //    making Arrays for the order
-    private List<Sandwich> sandwiches;
-    private List<Drink> drinks;
-    private List<Chips> chips;
+    private final List<Sandwich> sandwiches;
+    private final List<Drink> drinks;
+    private final List<Chips> chips;
 
     public Order() {
         this.sandwiches = new ArrayList<>();

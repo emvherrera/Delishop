@@ -8,17 +8,17 @@ public class Sandwich implements Priceable{
     private String size = "";
 
     // "white", "wheat", "rye", "wrap"
-    private String breadType;
+    private final String breadType;
     private boolean toasted;
 
     // Allow multiple meats
-    private List<Meat> meats;
+    private final List<Meat> meats;
 
     // Allow multiple cheeses
-    private List<Cheese> cheese;
+    private final List<Cheese> cheese;
 
-    private List<RegularToppings> regularToppings;
-    private List<Sauce> sauce;
+    private final List<RegularToppings> regularToppings;
+    private final List<Sauce> sauce;
 
     public Sandwich(String size, String breadType) {
 

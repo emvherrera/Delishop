@@ -2,8 +2,8 @@ package com.pluralsight.Model;
 
 public class Drink implements Priceable{
 
-    private String size; // "Small", "Medium", "Large"
-    private String flavor;
+    private final String size; // "Small", "Medium", "Large"
+    private final String flavor;
 
     public Drink(String size, String flavor) {
         this.size = size;
