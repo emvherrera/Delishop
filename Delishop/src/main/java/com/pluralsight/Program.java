@@ -1,4 +1,6 @@
-package com.pluralsight.ui;
+package com.pluralsight;
+
+import com.pluralsight.ui.UserInterface;
 
 public class Program {
 
